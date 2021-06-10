@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "g++ src/*.cpp -o bin/${workspaceFolderBasename} -O -s -static -mwindows -Iinclude -Llib -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system; saps bin/${workspaceFolderBasename}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
