@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\SFML-cpp.2.5.1\build\native\SFML-cpp.props" Condition="Exists('packages\SFML-cpp.2.5.1\build\native\SFML-cpp.props')" />
+  <Import Project="packages\SFML-cpp.redist.2.5.1.1\build\native\SFML-cpp.redist.props" Condition="Exists('packages\SFML-cpp.redist.2.5.1.1\build\native\SFML-cpp.redist.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d83e4d3e-1fe2-4e48-bc9a-9825ceb08780}</ProjectGuid>
+    <RootNamespace>SpaceWahou</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    <Linkage-sfml-window>static</Linkage-sfml-window>
+    <Linkage-sfml-audio>static</Linkage-sfml-audio>
+    <Linkage-sfml-graphics>static</Linkage-sfml-graphics>
+    <Linkage-sfml-system>static</Linkage-sfml-system>
+    <Linkage-sfml-network>static</Linkage-sfml-network>
+    <Linkage-sfml_graphics>static</Linkage-sfml_graphics>
+    <Linkage-sfml_audio>static</Linkage-sfml_audio>
+    <Linkage-sfml_system>static</Linkage-sfml_system>
+    <Linkage-sfml_window>static</Linkage-sfml_window>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    <Linkage-sfml-window>static</Linkage-sfml-window>
+    <Linkage-sfml-audio>static</Linkage-sfml-audio>
+    <Linkage-sfml-graphics>static</Linkage-sfml-graphics>
+    <Linkage-sfml-system>static</Linkage-sfml-system>
+    <Linkage-sfml-network>static</Linkage-sfml-network>
+    <Linkage-sfml_graphics>static</Linkage-sfml_graphics>
+    <Linkage-sfml_audio>static</Linkage-sfml_audio>
+    <Linkage-sfml_system>static</Linkage-sfml_system>
+    <Linkage-sfml_window>static</Linkage-sfml_window>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    <Linkage-sfml-window>static</Linkage-sfml-window>
+    <Linkage-sfml-audio>static</Linkage-sfml-audio>
+    <Linkage-sfml-graphics>static</Linkage-sfml-graphics>
+    <Linkage-sfml-system>static</Linkage-sfml-system>
+    <Linkage-sfml-network>static</Linkage-sfml-network>
+    <Linkage-sfml_graphics>static</Linkage-sfml_graphics>
+    <Linkage-sfml_audio>static</Linkage-sfml_audio>
+    <Linkage-sfml_system>static</Linkage-sfml_system>
+    <Linkage-sfml_window>static</Linkage-sfml_window>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    <Linkage-sfml-window>static</Linkage-sfml-window>
+    <Linkage-sfml-audio>static</Linkage-sfml-audio>
+    <Linkage-sfml-graphics>static</Linkage-sfml-graphics>
+    <Linkage-sfml-system>static</Linkage-sfml-system>
+    <Linkage-sfml-network>static</Linkage-sfml-network>
+    <Linkage-sfml_graphics>static</Linkage-sfml_graphics>
+    <Linkage-sfml_audio>static</Linkage-sfml_audio>
+    <Linkage-sfml_system>static</Linkage-sfml_system>
+    <Linkage-sfml_window>static</Linkage-sfml_window>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Background.cpp" />
+    <ClCompile Include="Sources\Bonus.cpp" />
+    <ClCompile Include="Sources\Bullet.cpp" />
+    <ClCompile Include="Sources\Enemy.cpp" />
+    <ClCompile Include="Sources\Main.cpp" />
+    <ClCompile Include="Sources\Map.cpp" />
+    <ClCompile Include="Sources\MathUtils.cpp" />
+    <ClCompile Include="Sources\Menu.cpp" />
+    <ClCompile Include="Sources\ParticleSystem.cpp" />
+    <ClCompile Include="Sources\Player.cpp" />
+    <ClCompile Include="Sources\Ship.cpp" />
+    <ClCompile Include="Sources\UI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Background.h" />
+    <ClInclude Include="Sources\Bonus.h" />
+    <ClInclude Include="Sources\Bullet.h" />
+    <ClInclude Include="Sources\Enemy.h" />
+    <ClInclude Include="Sources\Main.h" />
+    <ClInclude Include="Sources\Map.h" />
+    <ClInclude Include="Sources\MathUtils.h" />
+    <ClInclude Include="Sources\Menu.h" />
+    <ClInclude Include="Sources\ParticleSystem.h" />
+    <ClInclude Include="Sources\Player.h" />
+    <ClInclude Include="Sources\Ship.h" />
+    <ClInclude Include="Sources\UI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SFML-cpp.redist.2.5.1.1\build\native\SFML-cpp.redist.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SFML-cpp.redist.2.5.1.1\build\native\SFML-cpp.redist.props'))" />
+    <Error Condition="!Exists('packages\SFML-cpp.2.5.1\build\native\SFML-cpp.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SFML-cpp.2.5.1\build\native\SFML-cpp.props'))" />
+  </Target>
+</Project>
