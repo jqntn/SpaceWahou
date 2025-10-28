@@ -1,5 +1,19 @@
 {
   "dependencies": [
-    "sfml"
+    {
+      "name": "sfml",
+      "default-features": false,
+      "features": [
+        "audio",
+        "graphics",
+        "window"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "name": "sfml",
+      "version": "3.0.2"
+    }
   ]
 }
