@@ -1,7 +1,7 @@
 #include "Menu.h"
 Menu::Menu(sf::RenderWindow& window)
 {
-  if (!font.openFromFile(getAssetsPath() + "\\SpaceAge.ttf")) {
+  if (!font.openFromFile(getAssetsPath() + "/SpaceAge.ttf")) {
   }
   menu[0].setFont(font);
   menu[0].setFillColor(sf::Color::White);

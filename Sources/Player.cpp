@@ -28,16 +28,16 @@ Player::Player(std::string id, int life, int posX, int posY)
   shipsShape.setOrigin(sf::Vector2f(70, 70));
   shipsShape.setOutlineThickness(3);
   typeB = TYPEBULLET::BASE;
-  buffer_gun.loadFromFile(getAssetsPath() + "\\gun.ogg");
-  buffer_shotgun.loadFromFile(getAssetsPath() + "\\shotgun.ogg");
-  buffer_rifle1.loadFromFile(getAssetsPath() + "\\submachine0.ogg");
-  buffer_rifle2.loadFromFile(getAssetsPath() + "\\submachine1.ogg");
-  buffer_rifle3.loadFromFile(getAssetsPath() + "\\submachine2.ogg");
-  buffer_rifle4.loadFromFile(getAssetsPath() + "\\submachine3.ogg");
-  buffer_rifleEnd.loadFromFile(getAssetsPath() + "\\submachine_end.ogg");
-  buffer_crazy.loadFromFile(getAssetsPath() + "\\nuke.ogg");
+  buffer_gun.loadFromFile(getAssetsPath() + "/gun.ogg");
+  buffer_shotgun.loadFromFile(getAssetsPath() + "/shotgun.ogg");
+  buffer_rifle1.loadFromFile(getAssetsPath() + "/submachine0.ogg");
+  buffer_rifle2.loadFromFile(getAssetsPath() + "/submachine1.ogg");
+  buffer_rifle3.loadFromFile(getAssetsPath() + "/submachine2.ogg");
+  buffer_rifle4.loadFromFile(getAssetsPath() + "/submachine3.ogg");
+  buffer_rifleEnd.loadFromFile(getAssetsPath() + "/submachine_end.ogg");
+  buffer_crazy.loadFromFile(getAssetsPath() + "/nuke.ogg");
 
-  music1->openFromFile(getAssetsPath() + "\\music.ogg");
+  music1->openFromFile(getAssetsPath() + "/music.ogg");
   player = this;
   music1->play();
   music1->setLooping(true);
