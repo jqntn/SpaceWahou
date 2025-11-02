@@ -420,3 +420,4 @@ FodyWeavers.xsd
 *.ini
 
 vcpkg_installed/
+build/
