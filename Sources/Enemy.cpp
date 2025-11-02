@@ -32,10 +32,10 @@ Enemy::Enemy(std::string id, sf::Vector2f position, Type type)
       radius = 20;
       if (soundBuffers.find(Type::Triangle) == soundBuffers.end()) {
         soundBuffers[Type::Triangle].loadFromFile(getAssetsPath() +
-                                                  "\\monster0.ogg");
+                                                  "/monster0.ogg");
       }
       // isSoundLoaded = buffer_death.loadFromFile(getAssetsPath() +
-      // "\\monster0.ogg");
+      // "/monster0.ogg");
     } break;
     case Type::Square: {
       health = 200;
@@ -60,10 +60,10 @@ Enemy::Enemy(std::string id, sf::Vector2f position, Type type)
       bulCount = 4;
       if (soundBuffers.find(Type::Square) == soundBuffers.end()) {
         soundBuffers[Type::Square].loadFromFile(getAssetsPath() +
-                                                "\\monster1.ogg");
+                                                "/monster1.ogg");
       }
       // isSoundLoaded = buffer_death.loadFromFile(getAssetsPath() +
-      // "\\monster1.ogg");
+      // "/monster1.ogg");
     } break;
     case Type::Circle: {
       health = 400;
@@ -83,10 +83,10 @@ Enemy::Enemy(std::string id, sf::Vector2f position, Type type)
       bulCount = 32;
       if (soundBuffers.find(Type::Circle) == soundBuffers.end()) {
         soundBuffers[Type::Circle].loadFromFile(getAssetsPath() +
-                                                "\\monster2.ogg");
+                                                "/monster2.ogg");
       }
       // isSoundLoaded = buffer_death.loadFromFile(getAssetsPath() +
-      // "\\monster2.ogg");
+      // "/monster2.ogg");
     } break;
     case Type::Octagon: {
       health = 800;
@@ -107,10 +107,10 @@ Enemy::Enemy(std::string id, sf::Vector2f position, Type type)
       bulCount = 8;
       if (soundBuffers.find(Type::Octagon) == soundBuffers.end()) {
         soundBuffers[Type::Octagon].loadFromFile(getAssetsPath() +
-                                                 "\\monster3.ogg");
+                                                 "/monster3.ogg");
       }
       // isSoundLoaded = buffer_death.loadFromFile(getAssetsPath() +
-      // "\\monster3.ogg");
+      // "/monster3.ogg");
     } break;
   }
   shape.setPosition(position);

@@ -27,18 +27,9 @@ getMusic()
   return music;
 }
 std::string
-getAppPath()
-{
-  char cAppPath[MAX_PATH];
-  GetModuleFileNameA(0, cAppPath, MAX_PATH);
-  std::string sAppPath = cAppPath;
-  char appNamePos = sAppPath.find_last_of("\\");
-  return sAppPath.substr(0, appNamePos + 1);
-}
-std::string
 getAssetsPath()
 {
-  return "Assets\\";
+  return "Assets";
 }
 // Julien: API
 std::vector<Object*> Objects;
@@ -154,7 +145,7 @@ main()
   // background->CreateStars(window);
   // UIFonts
   sf::Font police;
-  police.openFromFile(getAssetsPath() + "\\SpaceAge.ttf");
+  police.openFromFile(getAssetsPath() + "/SpaceAge.ttf");
   // MENU
   while (!menu->gameLaunched) {
     float deltaTime = clock.getElapsedTime().asSeconds();

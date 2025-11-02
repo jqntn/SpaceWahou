@@ -4,12 +4,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
-#include <windows.h>
 // Julien: LOG MACRO
 #define LOG(X) std::cout << X << std::endl;
 // Julien: Utils
-std::string
-getAppPath();
 std::string
 getAssetsPath();
 // Julien: API
