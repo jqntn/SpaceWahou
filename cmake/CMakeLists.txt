@@ -7,8 +7,8 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 project(SpaceWahou LANGUAGES CXX)
 
-FetchContent_Declare(sfml URL "https://github.com/SFML/SFML/archive/refs/tags/3.0.2.tar.gz")
-FetchContent_MakeAvailable(sfml)
+FetchContent_Declare(vrsfml URL "https://github.com/vittorioromeo/VRSFML/archive/refs/heads/master.tar.gz")
+FetchContent_MakeAvailable(vrsfml)
 
 add_executable(SpaceWahou)
 
@@ -25,5 +25,4 @@ target_link_libraries(SpaceWahou PRIVATE
   SFML::Window
   SFML::Graphics
   SFML::Audio
-  SFML::Main
 )
