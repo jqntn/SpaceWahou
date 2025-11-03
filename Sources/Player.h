@@ -53,9 +53,6 @@ public:
 
   // BONUS
   float bonusDuration = 0.0f;
-  // on charge quelque chose dans le buffer...
-  sf::Sound* sound = getSoundPlayer();
-  sf::Music* music1 = getMusic();
 
   void ShootBullet(sf::RenderWindow* window, float deltaTime);
   sf::CircleShape shipsShape;
@@ -75,3 +72,5 @@ public:
   void OnEvent(sf::RenderWindow* window, sf::Event event, float deltaTime);
   void GameOver(sf::RenderWindow* window);
 };
+extern sf::Sound* soundPlayer;
+extern sf::Music* music;

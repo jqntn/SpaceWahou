@@ -19,7 +19,8 @@ private:
   int selectedItemIndex;
   sf::Font font;
   sf::Text menu[MAX_NUMBER_OF_ITEMS]{ font, font, font, font };
-  sf::Sound* soundplayer = getSoundPlayer();
-  sf::Sound* soundenemy = getSoundEnemy();
-  sf::Music* music1 = getMusic();
 };
+extern sf::SoundBuffer buffer_tmp;
+extern sf::Sound* soundPlayer;
+extern sf::Sound* soundEnemy;
+extern sf::Music* music;

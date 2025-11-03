@@ -74,15 +74,33 @@ Menu::OnEventMenu(sf::RenderWindow* window, sf::Event event, float deltaTime)
             if (soundON) {
               soundON = false;
               menu[3].setString("Sound OFF");
-              soundplayer->setVolume(0);
-              soundenemy->setVolume(0);
-              music1->setVolume(0);
+              if (nullptr == soundPlayer) {
+                soundPlayer = new sf::Sound(buffer_tmp);
+              }
+              if (nullptr == soundEnemy) {
+                soundEnemy = new sf::Sound(buffer_tmp);
+              }
+              if (nullptr == music) {
+                music = new sf::Music();
+              }
+              soundPlayer->setVolume(0);
+              soundEnemy->setVolume(0);
+              music->setVolume(0);
             } else if (!soundON) {
               soundON = true;
               menu[3].setString("Sound ON");
-              soundplayer->setVolume(70);
-              soundenemy->setVolume(70);
-              music1->setVolume(70);
+              if (nullptr == soundPlayer) {
+                soundPlayer = new sf::Sound(buffer_tmp);
+              }
+              if (nullptr == soundEnemy) {
+                soundEnemy = new sf::Sound(buffer_tmp);
+              }
+              if (nullptr == music) {
+                music = new sf::Music();
+              }
+              soundPlayer->setVolume(70);
+              soundEnemy->setVolume(70);
+              music->setVolume(70);
             }
             break;
         }

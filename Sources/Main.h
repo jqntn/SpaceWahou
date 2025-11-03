@@ -51,9 +51,3 @@ BeginGame(sf::RenderWindow& window, sf::Font police);
 class Enemy;
 std::vector<Enemy*>&
 getEnemies();
-sf::Sound*
-getSoundPlayer();
-sf::Sound*
-getSoundEnemy();
-sf::Music*
-getMusic();

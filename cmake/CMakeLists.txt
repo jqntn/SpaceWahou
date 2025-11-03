@@ -17,6 +17,7 @@ set_property(TARGET SpaceWahou PROPERTY WIN32_EXECUTABLE $<NOT:$<CONFIG:Debug>>)
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Emscripten")
   set_property(TARGET SpaceWahou PROPERTY SUFFIX ".html")
+  target_compile_definitions(SpaceWahou PRIVATE EMSCRIPTEN)
   target_link_options(SpaceWahou PRIVATE
     -sFULL_ES2=1
     -sASYNCIFY=1

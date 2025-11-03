@@ -37,10 +37,10 @@ Player::Player(std::string id, int life, int posX, int posY)
   buffer_rifleEnd.loadFromFile(getAssetsPath() + "/submachine_end.ogg");
   buffer_crazy.loadFromFile(getAssetsPath() + "/nuke.ogg");
 
-  music1->openFromFile(getAssetsPath() + "/music.ogg");
+  music->openFromFile(getAssetsPath() + "/music.ogg");
   player = this;
-  music1->play();
-  music1->setLooping(true);
+  music->play();
+  music->setLooping(true);
 }
 void
 Player::Update(sf::RenderWindow* window, float deltaTime)
@@ -119,8 +119,8 @@ Player::ShootBullet(sf::RenderWindow* window, float deltaTime)
     if (shootTimer >= shootTimerValue) // Shoot
     {
       if (typeB == TYPEBULLET::SHOTGUN) {
-        sound->setBuffer(buffer_shotgun);
-        sound->play();
+        soundPlayer->setBuffer(buffer_shotgun);
+        soundPlayer->play();
         Bullet* bullet = new Bullet(
           damageP, GetTraj(window, playerCenter), Bullet::Type::Player);
         bullet->shapeB.setPosition(playerCenter);
@@ -153,17 +153,17 @@ Player::ShootBullet(sf::RenderWindow* window, float deltaTime)
       } else if (typeB == TYPEBULLET::MITRAILLETTE) {
         int i = rand() % 4 + 1;
         if (i == 1) {
-          sound->setBuffer(buffer_rifle1);
-          sound->play();
+          soundPlayer->setBuffer(buffer_rifle1);
+          soundPlayer->play();
         } else if (i == 2) {
-          sound->setBuffer(buffer_rifle2);
-          sound->play();
+          soundPlayer->setBuffer(buffer_rifle2);
+          soundPlayer->play();
         } else if (i == 3) {
-          sound->setBuffer(buffer_rifle3);
-          sound->play();
+          soundPlayer->setBuffer(buffer_rifle3);
+          soundPlayer->play();
         } else if (i == 4) {
-          sound->setBuffer(buffer_rifle4);
-          sound->play();
+          soundPlayer->setBuffer(buffer_rifle4);
+          soundPlayer->play();
         }
         Bullet* bullet = new Bullet(
           damageP, GetTraj(window, playerCenter), Bullet::Type::Player);
@@ -171,8 +171,8 @@ Player::ShootBullet(sf::RenderWindow* window, float deltaTime)
         bullets.push_back(bullet);
         shootTimer = 0;
       } else if (typeB == TYPEBULLET::CRAZY) {
-        sound->setBuffer(buffer_crazy);
-        sound->play();
+        soundPlayer->setBuffer(buffer_crazy);
+        soundPlayer->play();
         float angle = 1 + (rand() % 360);
         Bullet* bullet = new Bullet(
           damageP,
@@ -198,8 +198,8 @@ Player::ShootBullet(sf::RenderWindow* window, float deltaTime)
         bullet->shapeB.setPosition(playerCenter);
         bullets.push_back(bullet);
       } else {
-        sound->setBuffer(buffer_gun);
-        sound->play();
+        soundPlayer->setBuffer(buffer_gun);
+        soundPlayer->play();
         Bullet* bullet = new Bullet(
           damageP, GetTraj(window, playerCenter), Bullet::Type::Player);
         bullet->shapeB.setPosition(playerCenter);
@@ -211,8 +211,8 @@ Player::ShootBullet(sf::RenderWindow* window, float deltaTime)
     if (isMouseButtonDown) {
       isMouseButtonDown = false;
       if (typeB == TYPEBULLET::MITRAILLETTE) {
-        sound->setBuffer(buffer_rifleEnd);
-        sound->play();
+        soundPlayer->setBuffer(buffer_rifleEnd);
+        soundPlayer->play();
       }
     }
   }

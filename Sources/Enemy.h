@@ -44,10 +44,10 @@ public:
   float speedCircle = 500.0f;
 
   sf::SoundBuffer buffer_death;
-  sf::Sound* sound = getSoundEnemy();
 
   void ShootBul(float deltaTime, sf::Vector2f dir, float angle);
   Enemy(std::string id, sf::Vector2f position, Type type);
   ~Enemy();
   void Update(sf::RenderWindow* window, float deltaTime);
 };
+extern sf::Sound* soundEnemy;

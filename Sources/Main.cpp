@@ -8,24 +8,9 @@ Background* background;
 Map* map;
 UI* ui;
 sf::SoundBuffer buffer_tmp;
-sf::Sound* soundPlayer = new sf::Sound(buffer_tmp);
-sf::Sound* soundEnemy = new sf::Sound(buffer_tmp);
-sf::Music* music = new sf::Music();
-sf::Sound*
-getSoundPlayer()
-{
-  return soundPlayer;
-}
-sf::Sound*
-getSoundEnemy()
-{
-  return soundEnemy;
-}
-sf::Music*
-getMusic()
-{
-  return music;
-}
+sf::Sound* soundPlayer;
+sf::Sound* soundEnemy;
+sf::Music* music;
 std::string
 getAssetsPath()
 {
@@ -118,9 +103,6 @@ getEnemies()
 int
 main()
 {
-  soundPlayer->setVolume(70);
-  soundEnemy->setVolume(70);
-  music->setVolume(70);
   // MouseCursor
   sf::CircleShape aimShape;
   float aimRadius = 10.0f;
@@ -129,6 +111,12 @@ main()
   aimShape.setFillColor(sf::Color::Transparent);
   aimShape.setOutlineColor(sf::Color::Red);
   aimShape.setOutlineThickness(2.0f);
+#ifdef EMSCRIPTEN
+  sf::RenderWindow window(sf::VideoMode::getDesktopMode(),
+                          "SpaceWahou",
+                          sf::Style::Default,
+                          sf::State::Fullscreen);
+#else
   sf::ContextSettings settings;
   settings.antiAliasingLevel = 4;
   sf::RenderWindow window(sf::VideoMode::getDesktopMode(),
@@ -136,6 +124,7 @@ main()
                           sf::Style::Default,
                           sf::State::Fullscreen,
                           settings);
+#endif
   window.setMouseCursorVisible(false);
   sf::Clock(clock);
   auto menu = new Menu(window);
@@ -168,6 +157,24 @@ main()
     window.display();
   }
   if (menu->gameLaunched && !allCreated) {
+    if (nullptr == soundPlayer) {
+      soundPlayer = new sf::Sound(buffer_tmp);
+    }
+    if (nullptr == soundEnemy) {
+      soundEnemy = new sf::Sound(buffer_tmp);
+    }
+    if (nullptr == music) {
+      music = new sf::Music();
+    }
+    if (menu->soundON) {
+      soundPlayer->setVolume(70);
+      soundEnemy->setVolume(70);
+      music->setVolume(70);
+    } else {
+      soundPlayer->setVolume(0);
+      soundEnemy->setVolume(0);
+      music->setVolume(0);
+    }
     map = new Map("Map", &window);
     Map::mape = map;
     ui = new UI("UI", &window, police);
