@@ -319,8 +319,10 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
   score = damage * 10;
   // Health
   if (health <= 0) {
+#ifndef EMSCRIPTEN
     soundEnemy->setBuffer(soundBuffers[type]);
     soundEnemy->play();
+#endif
     Map::mape->compteurEnemy--;
     ParticleSystem* particles =
       new ParticleSystem(150, 1.2f, this->shape.getPosition(), color, { 3, 3 });

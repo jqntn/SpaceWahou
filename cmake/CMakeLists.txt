@@ -7,6 +7,11 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 project(SpaceWahou LANGUAGES CXX)
 
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Emscripten")
+  add_compile_options("-pthread")
+  add_compile_definitions(MA_ENABLE_AUDIO_WORKLETS)
+endif()
+
 FetchContent_Declare(zsfml URL "https://github.com/Zombieschannel/SFML/archive/refs/heads/SFML-3.x.x-EMCC.tar.gz")
 FetchContent_MakeAvailable(zsfml)
 
@@ -19,8 +24,10 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Emscripten")
   set_property(TARGET SpaceWahou PROPERTY SUFFIX ".html")
   target_compile_definitions(SpaceWahou PRIVATE EMSCRIPTEN)
   target_link_options(SpaceWahou PRIVATE
-    -sFULL_ES2=1
+    -sAUDIO_WORKLET=1
+    -sWASM_WORKERS=1
     -sASYNCIFY=1
+    -sFULL_ES2=1
     --preload-file=${CMAKE_SOURCE_DIR}/../Assets@Assets
     --shell-file=${CMAKE_SOURCE_DIR}/emscripten/shell.html
   )

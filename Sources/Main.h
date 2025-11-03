@@ -5,7 +5,11 @@
 #include <iostream>
 #include <math.h>
 // Julien: LOG MACRO
+#ifdef EMSCRIPTEN
+#define LOG(X)
+#else
 #define LOG(X) std::cout << X << std::endl;
+#endif
 // Julien: Utils
 std::string
 getAssetsPath();
