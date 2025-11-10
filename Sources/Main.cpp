@@ -112,10 +112,8 @@ main()
   aimShape.setOutlineColor(sf::Color::Red);
   aimShape.setOutlineThickness(2.0f);
 #ifdef EMSCRIPTEN
-  sf::RenderWindow window(sf::VideoMode::getDesktopMode(),
-                          "SpaceWahou",
-                          sf::Style::Default,
-                          sf::State::Fullscreen);
+  sf::RenderWindow window(
+    sf::VideoMode({ EMSCRIPTEN_WIDTH, EMSCRIPTEN_HEIGHT }), "SpaceWahou");
 #else
   sf::ContextSettings settings;
   settings.antiAliasingLevel = 4;

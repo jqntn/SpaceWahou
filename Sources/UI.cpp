@@ -39,9 +39,9 @@ UI::GameOver(sf::RenderWindow* window)
   sf::Text gameOver(policeUI);
   gameOver.setString("GAME OVER");
   gameOver.setPosition(
-    { window->getSize().x / 2.0f -
+    { WINDOW_WIDTH_PTR / 2.0f -
         ((gameOver.getCharacterSize() * gameOver.getString().getSize()) / 2.0f),
-      window->getSize().y / 2.0f });
+      WINDOW_HEIGHT_PTR / 2.0f });
   window->draw(gameOver);
 }
 void
@@ -50,7 +50,7 @@ UI::Score(sf::RenderWindow* window)
   sf::Text textScore(policeUI);
   textScore.setString("Score : " + std::to_string(Player::player->score));
   textScore.setPosition(
-    { window->getSize().x - (80.0f + (textScore.getCharacterSize() *
+    { WINDOW_WIDTH_PTR - (80.0f + (textScore.getCharacterSize() *
                                       textScore.getString().getSize())),
       50.0f });
   window->draw(textScore);

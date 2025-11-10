@@ -59,8 +59,8 @@ Bullet::Update(sf::RenderWindow* window, float deltaTime)
   // Player
   if (type == Type::Player) {
     if (shapeB.getPosition().y < 0 || shapeB.getPosition().x < 0 ||
-        shapeB.getPosition().y > window->getSize().y ||
-        shapeB.getPosition().x > window->getSize().x) {
+        shapeB.getPosition().y > WINDOW_HEIGHT_PTR ||
+        shapeB.getPosition().x > WINDOW_WIDTH_PTR) {
       LOG(3 << "=" << this);
       DestroyObject2(this);
     } else {

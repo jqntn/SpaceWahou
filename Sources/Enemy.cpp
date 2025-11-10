@@ -152,8 +152,8 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
       }
       // Target
       target = isDirVert
-                 ? sf::Vector2f(position.x, position.y + window->getSize().y)
-                 : sf::Vector2f(position.x + window->getSize().x, position.y);
+                 ? sf::Vector2f(position.x, position.y + WINDOW_HEIGHT_PTR)
+                 : sf::Vector2f(position.x + WINDOW_WIDTH_PTR, position.y);
       // Position
       sf::Vector2f direction = target - shape.getPosition();
       float distance = sqrt(powf(direction.x, 2) + powf(direction.y, 2));
@@ -212,8 +212,8 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
       }
       // Target
       target = isDirVert
-                 ? sf::Vector2f(position.x, position.y + window->getSize().y)
-                 : sf::Vector2f(position.x + window->getSize().x, position.y);
+                 ? sf::Vector2f(position.x, position.y + WINDOW_HEIGHT_PTR)
+                 : sf::Vector2f(position.x + WINDOW_WIDTH_PTR, position.y);
       // PositionX
       sf::Vector2f direction = target - shape.getPosition();
       float distance = sqrt(powf(direction.x, 2) + powf(direction.y, 2));
@@ -248,8 +248,8 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
       shape.setRotation(sf::degrees(rot));
       // Target
       target = isDirVert
-                 ? sf::Vector2f(position.x, position.y + window->getSize().y)
-                 : sf::Vector2f(position.x + window->getSize().x, position.y);
+                 ? sf::Vector2f(position.x, position.y + WINDOW_HEIGHT_PTR)
+                 : sf::Vector2f(position.x + WINDOW_WIDTH_PTR, position.y);
       // PositionX
       sf::Vector2f direction = target - shape.getPosition();
       float distance = sqrt(powf(direction.x, 2) + powf(direction.y, 2));

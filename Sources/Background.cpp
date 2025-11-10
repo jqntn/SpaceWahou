@@ -104,8 +104,8 @@ Background::CreateStars(sf::RenderWindow& window)
   // STARS
   std::list<Star*>::iterator starsIt = stars.begin();
   for (int i = 0; i < NUMBER_STARS; i++) {
-    float randomX = rand() * window.getSize().x / (float)RAND_MAX;
-    float randomY = rand() * window.getSize().y / (float)RAND_MAX;
+    float randomX = rand() * WINDOW_WIDTH_REF / (float)RAND_MAX;
+    float randomY = rand() * WINDOW_HEIGHT_REF / (float)RAND_MAX;
     float colorAlpha = 1 + (rand() % 256);
     sf::Color color(255, 255, 255, colorAlpha);
     float sizeStar = 1 + (rand() % 3);
@@ -119,8 +119,8 @@ Background::SpawnEntities(sf::RenderWindow& window, float deltaTime)
   entitySpawnTimer += deltaTime;
   if (entitySpawnTimer > ENTITY_SPAWN_PERIOD) {
     entitySpawnTimer = 0.0f;
-    float randomX = rand() * window.getSize().x / (float)RAND_MAX;
-    float randomY = rand() * window.getSize().y / (float)RAND_MAX;
+    float randomX = rand() * WINDOW_WIDTH_REF / (float)RAND_MAX;
+    float randomY = rand() * WINDOW_HEIGHT_REF / (float)RAND_MAX;
     float randomAngle = rand() * 360.0f / (float)RAND_MAX;
     Entity* pNewEntity = CreateEntity(randomX, randomY, randomAngle);
     entities.push_back(pNewEntity);
