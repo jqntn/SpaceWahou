@@ -151,9 +151,10 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
         timer = patrolTime;
       }
       // Target
-      target = isDirVert
-                 ? sf::Vector2f(position.x, position.y + window->getSize().y)
-                 : sf::Vector2f(position.x + window->getSize().x, position.y);
+      target =
+        isDirVert
+          ? sf::Vector2f(position.x, position.y + (float)window->getSize().y)
+          : sf::Vector2f(position.x + (float)window->getSize().x, position.y);
       // Position
       sf::Vector2f direction = target - shape.getPosition();
       float distance = sqrt(powf(direction.x, 2) + powf(direction.y, 2));
@@ -211,9 +212,10 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
         timer = patrolTime;
       }
       // Target
-      target = isDirVert
-                 ? sf::Vector2f(position.x, position.y + window->getSize().y)
-                 : sf::Vector2f(position.x + window->getSize().x, position.y);
+      target =
+        isDirVert
+          ? sf::Vector2f(position.x, position.y + (float)window->getSize().y)
+          : sf::Vector2f(position.x + (float)window->getSize().x, position.y);
       // PositionX
       sf::Vector2f direction = target - shape.getPosition();
       float distance = sqrt(powf(direction.x, 2) + powf(direction.y, 2));
@@ -247,9 +249,10 @@ Enemy::Update(sf::RenderWindow* window, float deltaTime)
       rot += isOnTarget == 1 ? .5 : -.5;
       shape.setRotation(sf::degrees(rot));
       // Target
-      target = isDirVert
-                 ? sf::Vector2f(position.x, position.y + window->getSize().y)
-                 : sf::Vector2f(position.x + window->getSize().x, position.y);
+      target =
+        isDirVert
+          ? sf::Vector2f(position.x, position.y + (float)window->getSize().y)
+          : sf::Vector2f(position.x + (float)window->getSize().x, position.y);
       // PositionX
       sf::Vector2f direction = target - shape.getPosition();
       float distance = sqrt(powf(direction.x, 2) + powf(direction.y, 2));
