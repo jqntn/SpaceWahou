@@ -4,19 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
-#define EMSCRIPTEN_WIDTH 1920
-#define EMSCRIPTEN_HEIGHT 1080
-#ifdef EMSCRIPTEN
-#define WINDOW_WIDTH_REF EMSCRIPTEN_WIDTH
-#define WINDOW_HEIGHT_REF EMSCRIPTEN_HEIGHT
-#define WINDOW_WIDTH_PTR EMSCRIPTEN_WIDTH
-#define WINDOW_HEIGHT_PTR EMSCRIPTEN_HEIGHT
-#else
-#define WINDOW_WIDTH_REF (window.getSize().x)
-#define WINDOW_HEIGHT_REF (window.getSize().y)
-#define WINDOW_WIDTH_PTR (window->getSize().x)
-#define WINDOW_HEIGHT_PTR (window->getSize().y)
-#endif
 // Julien: LOG MACRO
 #ifdef EMSCRIPTEN
 #define LOG(X)

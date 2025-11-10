@@ -6,30 +6,30 @@ Map::Map(std::string id, sf::RenderWindow* window)
 {
   this->id = "Map";
   limitUP.setFillColor(sf::Color::Black);
-  limitUP.setSize(sf::Vector2f(WINDOW_WIDTH_PTR, 100));
+  limitUP.setSize(sf::Vector2f(window->getSize().x, 100));
   limitUP.setPosition(sf::Vector2f(0, -90));
   limitDOWN.setFillColor(sf::Color::Black);
-  limitDOWN.setSize(sf::Vector2f(WINDOW_WIDTH_PTR, 100));
-  limitDOWN.setPosition(sf::Vector2f(0, WINDOW_HEIGHT_PTR - 10));
+  limitDOWN.setSize(sf::Vector2f(window->getSize().x, 100));
+  limitDOWN.setPosition(sf::Vector2f(0, window->getSize().y - 10));
   limitRIGHT.setFillColor(sf::Color::Black);
-  limitRIGHT.setSize(sf::Vector2f(100, WINDOW_HEIGHT_PTR));
+  limitRIGHT.setSize(sf::Vector2f(100, window->getSize().y));
   limitRIGHT.setPosition(sf::Vector2f(-90, 0));
   limitLEFT.setFillColor(sf::Color::Black);
-  limitLEFT.setSize(sf::Vector2f(100, WINDOW_HEIGHT_PTR));
-  limitLEFT.setPosition(sf::Vector2f(WINDOW_WIDTH_PTR - 10, 0));
+  limitLEFT.setSize(sf::Vector2f(100, window->getSize().y));
+  limitLEFT.setPosition(sf::Vector2f(window->getSize().x - 10, 0));
   player = new Player("Player", 1000, 50, 50);
   // Julien: testEnemy
   auto testEnemy0 =
     new Enemy("testEnemy0",
-              sf::Vector2f(WINDOW_WIDTH_PTR / 2, WINDOW_HEIGHT_PTR / 2),
+              sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2),
               Enemy::Type::Triangle);
   auto testEnemy1 =
     new Enemy("testEnemy1",
-              sf::Vector2f(WINDOW_WIDTH_PTR / 2, WINDOW_HEIGHT_PTR / 2),
+              sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2),
               Enemy::Type::Square);
   auto testEnemy2 =
     new Enemy("testEnemy2",
-              sf::Vector2f(WINDOW_WIDTH_PTR / 2, WINDOW_HEIGHT_PTR / 2),
+              sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2),
               Enemy::Type::Circle);
   mape = this;
 }
@@ -86,8 +86,8 @@ Map::SpawnEnemies(sf::RenderWindow* window, float deltaTime)
     float randomX;
     float randomY;
     while (!isValid) {
-      randomX = rand() * WINDOW_WIDTH_PTR / (float)RAND_MAX;
-      randomY = rand() * WINDOW_HEIGHT_PTR / (float)RAND_MAX;
+      randomX = rand() * window->getSize().x / (float)RAND_MAX;
+      randomY = rand() * window->getSize().y / (float)RAND_MAX;
       float distance =
         Magnitude(player->playerShape.getPosition(), { randomX, randomY });
       isValid = distance < 1200;
@@ -105,8 +105,8 @@ Map::SpawnEnemies(sf::RenderWindow* window, float deltaTime)
     float randomX;
     float randomY;
     while (!isValid) {
-      randomX = rand() * WINDOW_WIDTH_PTR / (float)RAND_MAX;
-      randomY = rand() * WINDOW_HEIGHT_PTR / (float)RAND_MAX;
+      randomX = rand() * window->getSize().x / (float)RAND_MAX;
+      randomY = rand() * window->getSize().y / (float)RAND_MAX;
       float distance =
         Magnitude(player->playerShape.getPosition(), { randomX, randomY });
       isValid = distance < 900;
@@ -124,8 +124,8 @@ Map::SpawnEnemies(sf::RenderWindow* window, float deltaTime)
     float randomX;
     float randomY;
     while (!isValid) {
-      randomX = rand() * WINDOW_WIDTH_PTR / (float)RAND_MAX;
-      randomY = rand() * WINDOW_HEIGHT_PTR / (float)RAND_MAX;
+      randomX = rand() * window->getSize().x / (float)RAND_MAX;
+      randomY = rand() * window->getSize().y / (float)RAND_MAX;
       float distance =
         Magnitude(player->playerShape.getPosition(), { randomX, randomY });
       isValid = distance < 900;
@@ -143,8 +143,8 @@ Map::SpawnEnemies(sf::RenderWindow* window, float deltaTime)
     float randomX;
     float randomY;
     while (!isValid) {
-      randomX = rand() * WINDOW_WIDTH_PTR / (float)RAND_MAX;
-      randomY = rand() * WINDOW_HEIGHT_PTR / (float)RAND_MAX;
+      randomX = rand() * window->getSize().x / (float)RAND_MAX;
+      randomY = rand() * window->getSize().y / (float)RAND_MAX;
       float distance =
         Magnitude(player->playerShape.getPosition(), { randomX, randomY });
       isValid = distance < 800;

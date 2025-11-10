@@ -7,28 +7,28 @@ Menu::Menu(sf::RenderWindow& window)
   menu[0].setFillColor(sf::Color::White);
   menu[0].setString("Space Wahou");
   menu[0].setPosition(sf::Vector2f(
-    WINDOW_WIDTH_REF / 2 -
+    window.getSize().x / 2 -
       ((menu[0].getCharacterSize() * menu[0].getString().getSize()) / 2),
-    WINDOW_HEIGHT_REF / 4 * 1));
+    window.getSize().y / 4 * 1));
   menu[1].setFont(font);
   menu[1].setFillColor(sf::Color::Cyan);
   menu[1].setString("Play");
   menu[1].setPosition(sf::Vector2f(
-    WINDOW_WIDTH_REF / 2 -
+    window.getSize().x / 2 -
       ((menu[1].getCharacterSize() * menu[1].getString().getSize()) / 2),
-    WINDOW_HEIGHT_REF / 4 * 2));
+    window.getSize().y / 4 * 2));
   menu[2].setFont(font);
   menu[2].setFillColor(sf::Color::White);
   menu[2].setString("Quit");
   menu[2].setPosition(sf::Vector2f(
-    WINDOW_WIDTH_REF / 2 -
+    window.getSize().x / 2 -
       ((menu[2].getCharacterSize() * menu[2].getString().getSize()) / 2),
-    WINDOW_HEIGHT_REF / 4 * 3));
+    window.getSize().y / 4 * 3));
   menu[3].setFont(font);
   menu[3].setFillColor(sf::Color::White);
   menu[3].setString("Sound ON");
   menu[3].setPosition(
-    sf::Vector2f(WINDOW_WIDTH_REF / 4 * 0.1f, WINDOW_HEIGHT_REF / 4 * 3.8f));
+    sf::Vector2f(window.getSize().x / 4 * 0.1f, window.getSize().y / 4 * 3.8f));
   selectedItemIndex = 1;
 }
 Menu::~Menu() {}
